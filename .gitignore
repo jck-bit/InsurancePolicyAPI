@@ -1,0 +1,56 @@
+# .NET
+## Ignore build results
+/bin/
+/obj/
+
+/# User-specific files
+.idea/
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer Logs
+*.cab
+*.msi
+*.msm
+*.msp
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Rider
+.idea/
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# .NET Core
+# Restore directories
+.nuget/
+
+# ASP.NET Core files
+wwwroot/
+
+# Publish output
+publish/
+
+# ASP.NET Core Runtime files
+*/bin/
+*/obj/
+
+.db
+.dist
+
+# Database backups
+*.bak
+*.sql
+*.db
