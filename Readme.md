@@ -3,7 +3,6 @@
 This is a simple `.NET 8.0` web API for managing insurance policies.It  provides basic CRUD operations related to the policies. The API also integrates **Swagger** for automatic API documentation.
 
 ## Table of Contents
-- [Live endpoints](#Enpoints)
 - [Prerequisites](#prerequisites)
 - [Setup Instructions](#setup-instructions)
   - [Install Dependencies](#install-dependencies)
