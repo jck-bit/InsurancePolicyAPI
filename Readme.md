@@ -48,6 +48,12 @@ Follow the steps below to set up the project locally.
 
 ## Run Migrations
 
+Add a new migration before updating the database
+
+```bash
+dotnet ef migrations add InitialMigration
+```
+then update the databse
 ```bash
 dotnet ef database update
 ```
