@@ -63,7 +63,7 @@ dotnet ef database update
 dotnet run
 ```
 
-The application will start and you should see it on port 5000. 
+The application will start and you should see it on port 5202. 
 
 open the browser and navigate to 
 
