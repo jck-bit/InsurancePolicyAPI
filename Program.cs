@@ -8,21 +8,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-if (builder.Environment.IsDevelopment())
-{
-    
-    builder.Services.AddDbContext<PolicyContext>(options =>
+
+// builder.Services.AddDbContext<PolicyContext>(options =>
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDbContext<PolicyContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-}
-
-
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngularApp", policy =>
+    options.AddPolicy("AllowAllOrigins", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
-              .AllowAnyMethod()
+        policy.AllowAnyOrigin()   
+              .AllowAnyMethod()   
               .AllowAnyHeader();
     });
 });
@@ -30,17 +28,15 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 
-app.UseCors("AllowAngularApp");
+app.UseCors("AllowAllOrigins");
 
+app.UseSwagger();
+app.UseSwaggerUI();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
