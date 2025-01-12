@@ -54,3 +54,7 @@ publish/
 *.bak
 *.sql
 *.db
+*.env
+
+*.zip
+migrations

@@ -11,5 +11,19 @@ namespace InsurancePolicyAPI.Data
         }
 
         public DbSet<Policy> Policies { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+            modelBuilder.Entity<Policy>()
+                .Property(p => p.Premium)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Policy>()
+                .Property(p => p.Coverage)
+                .HasPrecision(18, 2);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

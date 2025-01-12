@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 [Route("api/[controller]")]
 public class PolicyController : ControllerBase
 {
-    private static readonly string[] AllowedTypes = { "Life", "Health", "Vehicle", "Universal Life" };
+    private static readonly string[] AllowedTypes = ["Life", "Health", "Vehicle", "Universal Life"];
 
     private readonly PolicyContext _context;
 
@@ -39,25 +39,26 @@ public class PolicyController : ControllerBase
 
     // POST: api/Policy
     [HttpPost]
-    public IActionResult CreatePolicy([FromBody] Policy policy)
+public IActionResult CreatePolicy([FromBody] Policy policy)
+{
+    if (!ModelState.IsValid)
     {
-        // Check model validation
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
-
-        // Validating the policy type
-        if (!AllowedTypes.Contains(policy.Type, StringComparer.OrdinalIgnoreCase))
-        {
-            return BadRequest("Invalid policy type. Allowed types are: Life, Health, Vehicle, Universal Life.");
-        }
-
-        _context.Policies.Add(policy);
-        _context.SaveChanges();
-
-        return CreatedAtAction(nameof(GetPolicy), new { id = policy.Id }, new { message = "Policy created successfully.", policy });
+        return BadRequest(ModelState);
     }
+
+    // Validating the policy type
+    if (!AllowedTypes.Contains(policy.Type, StringComparer.OrdinalIgnoreCase))
+    {
+        return BadRequest("Invalid policy type. Allowed types are: Life, Health, Vehicle, Universal Life.");
+    }
+
+    // Don't manually set Id; let EF handle it automatically
+    _context.Policies.Add(policy);
+    _context.SaveChanges();
+
+    return CreatedAtAction(nameof(GetPolicy), new { id = policy.Id }, new { message = "Policy created successfully.", policy });
+}
+
 
     // PUT: api/Policy/{id}
     [HttpPut("{id}")]
