@@ -9,7 +9,7 @@ This is a simple `.NET 8.0` web API for managing insurance policies.It  provides
   - [Install Dependencies](#install-dependencies)
   - [Run Migrations](#run-migrations)
   - [Run the Application](#run-the-application)
-  - [Local Endpoints](#local-endpoints)
+  - [Local Endpoints And Usage](#local-endpoints-and-usage)
 - [Technologies Used](#technologies-used)
 
 If you just want to explore the deployed API, just navigate to [InsurancePoliciesApi](https://insurance-policy-api-cfcthsfqene7azbp.canadacentral-01.azurewebsites.net/swagger)
@@ -73,7 +73,8 @@ or use swagger to explore the  endpoints
 
 `http://localhost:5202/swagger`
 
- ## Local Endpoints
+ ## Local Endpoints And Usage
+ Once The API is up and running you can perform the following actions
 
 
 | Endpoint             | Description                                                         |
