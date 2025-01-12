@@ -12,9 +12,7 @@ This is a simple `.NET 8.0` web API for managing insurance policies.It  provides
   - [Local Endpoints](#local-endpoints)
 - [Technologies Used](#technologies-used)
 
-If you just want  to explore the deployed API,  just navigate to 
-
-[InsurancePoliciesApi](#https://insurance-policy-api-cfcthsfqene7azbp.canadacentral-01.azurewebsites.net/swagger)
+If you just want to explore the deployed API, just navigate to [InsurancePoliciesApi](https://insurance-policy-api-cfcthsfqene7azbp.canadacentral-01.azurewebsites.net/swagger)
 
 
 If You want to build and run it Locally, Follow the instructions below.
@@ -80,3 +78,12 @@ or use swagger to explore the  endpoints
 | `PUT /api/policy/{id}`|Updates an existing policy by ID.                                  |
 | `DELETE /api/policy/{id}`   | Deletes a policy by ID.                                     |
 
+
+## Technologies Used
+
+- **.NET 8.0**
+- **ASP.NET Core**
+- **Entity Framework Core**
+- **SQL Server / SQLite**
+- **Swagger / OpenAPI**
+- **Docker** (optional)
